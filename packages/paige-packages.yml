@@ -1,0 +1,57 @@
+generated: '2026-08-04'
+method: searched
+source: https://github.com/Paige-AI
+note: >-
+  Paige publishes no client library for the commercial Paige Platform / UnifAI API
+  on npm, PyPI, Maven Central, NuGet, pkg.go.dev, RubyGems, Packagist or crates.io
+  (all probed 2026-08-04). What it does publish first-party is a research/ML SDK on
+  GitHub and open model weights on Hugging Face. paige-ml-sdk is NOT on PyPI — the
+  documented install is an editable install from a git clone.
+packages:
+- language: python
+  registry: github
+  name: paige-ml-sdk
+  url: https://github.com/Paige-AI/paige-ml-sdk
+  install: git clone https://github.com/Paige-AI/paige-ml-sdk && cd paige-ml-sdk && pip install -e .
+  official: true
+  status: alpha
+  license: proprietary (non-commercial academic research use only)
+  requires_python: '>=3.10'
+  description: >-
+    Tools for training supervised machine-learning models for computational-pathology
+    tasks using tile-level embeddings; accompanies the Paige Virchow foundation-model
+    suite. Ships a CLI (python -m paige.ml_sdk) built on PyTorch Lightning.
+  x-evidence:
+    fetched: '2026-08-04'
+    url: https://raw.githubusercontent.com/Paige-AI/paige-ml-sdk/main/pyproject.toml
+    http_status: 200
+- language: rust
+  registry: github
+  name: philips-isyntax-rs
+  url: https://github.com/Paige-AI/philips-isyntax-rs
+  install: cargo add --git https://github.com/Paige-AI/philips-isyntax-rs
+  official: true
+  description: Rust bindings for the Philips Pathology SDK (iSyntax whole-slide-image format).
+  x-evidence:
+    fetched: '2026-08-04'
+    url: https://api.github.com/orgs/Paige-AI/repos
+    http_status: 200
+model_weights:
+- registry: huggingface
+  org: paige-ai
+  url: https://huggingface.co/paige-ai
+  official: true
+  models:
+  - {name: Virchow, url: 'https://huggingface.co/paige-ai/Virchow', library: timm, license: cc-by-nc-nd-4.0}
+  - {name: Virchow2, url: 'https://huggingface.co/paige-ai/Virchow2', library: timm, license: cc-by-nc-nd-4.0}
+  - {name: Prism, url: 'https://huggingface.co/paige-ai/Prism', library: transformers, license: cc-by-nc-nd-4.0}
+  - {name: Prism2, url: 'https://huggingface.co/paige-ai/Prism2', library: transformers, license: cc-by-nc-nd-4.0}
+  - {name: Prism2-survival, url: 'https://huggingface.co/paige-ai/Prism2-survival', library: transformers, license: cc-by-nc-nd-4.0}
+  x-evidence:
+    fetched: '2026-08-04'
+    url: https://huggingface.co/api/models?author=paige-ai
+    http_status: 200
+registries_probed:
+- {registry: pypi, query: 'paige, paige-ai, paigeai, paige-ml-sdk, paige_ml_sdk', result: no first-party package}
+- {registry: npm, query: paige pathology, result: no first-party package}
+- {registry: huggingface, query: 'author=paige-ai', result: 5 first-party model repos}

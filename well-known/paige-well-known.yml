@@ -1,0 +1,57 @@
+generated: '2026-08-04'
+method: probed
+source: live GET of /.well-known/* on every Paige host
+result: none
+note: >-
+  No /.well-known/ document was recovered. IMPORTANT FALSE-POSITIVE WARNING: app.paige.ai
+  is a single-page application whose catch-all route answers HTTP 200 with the same
+  HTML shell (<title>Paige::FullFocus</title>) for EVERY path — including every
+  /.well-known/* path, /openapi.json, /graphql and /llms.txt. Those 200s are recorded
+  below as `spa-html-shell` and must never be read as hits. No pointer of type WellKnown,
+  SecurityTxt, APICatalog or AgentCard is wired into apis.yml, because nothing was found.
+hosts:
+- host: https://www.paige.ai
+  documents:
+  - {path: /.well-known/security.txt, status: 404, body: '{"message":"security.txt not found"}'}
+  - {path: /.well-known/api-catalog, status: 404}
+  - {path: /.well-known/ai-plugin.json, status: 404}
+  - {path: /.well-known/agent-card.json, status: 404}
+  - {path: /.well-known/agent.json, status: 404}
+  - {path: /llms.txt, status: 404}
+- host: https://paige.ai
+  documents:
+  - {path: /.well-known/security.txt, status: 404, body: '{"message":"security.txt not found"}'}
+  - {path: /llms.txt, status: 404}
+- host: https://app.paige.ai
+  note: SPA catch-all — every 200 below is an HTML shell, not a document.
+  documents:
+  - {path: /.well-known/security.txt, status: 200, result: spa-html-shell}
+  - {path: /.well-known/agent-card.json, status: 200, result: spa-html-shell}
+  - {path: /.well-known/agent.json, status: 200, result: spa-html-shell}
+  - {path: /.well-known/openid-configuration, status: 200, result: spa-html-shell}
+  - {path: /.well-known/oauth-authorization-server, status: 200, result: spa-html-shell}
+  - {path: /openapi.json, status: 200, result: spa-html-shell}
+  - {path: /api/openapi.json, status: 200, result: spa-html-shell}
+  - {path: /swagger.json, status: 200, result: spa-html-shell}
+  - {path: /api-docs, status: 200, result: spa-html-shell}
+  - {path: /graphql, status: 200, result: spa-html-shell}
+  - {path: /llms.txt, status: 200, result: spa-html-shell}
+- host: https://docs.paige.ai
+  note: >-
+    CNAMEd to ssl.readmessl.com (ReadMe.io) but Cloudflare returns error code 1014
+    (CNAME cross-user banned) for every path — the developer documentation host is
+    unreachable for the public. The Internet Archive holds only 301/302 redirect
+    captures for docs.paige.ai (2024-06 through 2025-01), never page content.
+  documents:
+  - {path: /, status: 403, body: 'error code: 1014'}
+  - {path: /openapi.json, status: 403, body: 'error code: 1014'}
+hosts_not_resolving:
+- api.paige.ai
+- developer.paige.ai
+- platform.paige.ai
+- applab.paige.ai
+- unifai.paige.ai
+- status.paige.ai
+- trust.paige.ai
+- security.paige.ai
+- portal.paige.ai

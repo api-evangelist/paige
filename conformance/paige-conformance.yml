@@ -1,0 +1,74 @@
+generated: '2026-08-04'
+method: searched
+source: https://www.paige.ai/ai-technology-and-services
+note: >-
+  Paige is a regulated medical-device company, so its published conformance posture
+  is regulatory and information-security, not API-protocol. No OpenAPI, AsyncAPI, GraphQL
+  SDL or MCP manifest is publicly available for the Paige Platform / UnifAI API, so
+  no API-protocol standard (OAuth 2.0, OIDC, RFC 9457, JSON:API, FHIR, DICOMweb) can
+  be asserted from evidence — each is recorded as unknown rather than false.
+standards:
+- id: iso-13485
+  conforms: true
+  category: quality-management
+  evidence: 'Paige states it is ISO 13485 certified (medical-device QMS) on https://www.paige.ai/ai-technology-and-services'
+- id: iso-27001
+  conforms: true
+  category: information-security
+  evidence: 'Paige states it is ISO 27001 certified on https://www.paige.ai/ai-technology-and-services'
+- id: hipaa
+  conforms: true
+  category: healthcare-privacy
+  evidence: 'Paige states HIPAA compliance on https://www.paige.ai/ai-technology-and-services'
+- id: gdpr
+  conforms: true
+  category: data-protection
+  evidence: 'Paige states GDPR compliance on https://www.paige.ai/ai-technology-and-services'
+- id: gxp
+  conforms: true
+  category: life-sciences-quality
+  evidence: 'Paige states GxP compliance on https://www.paige.ai/ai-technology-and-services'
+- id: fda-de-novo
+  conforms: true
+  category: regulatory
+  evidence: >-
+    Paige Prostate received FDA De Novo authorization in September 2021 — the first
+    AI-based pathology product authorized by FDA.
+    https://www.paige.ai/press-releases
+- id: fda-510k
+  conforms: true
+  category: regulatory
+  evidence: >-
+    FullFocus whole-slide-image viewer cleared by FDA 510(k) for primary diagnosis
+    (2020). https://www.paige.ai/diagnostic-ai
+- id: ce-ivd
+  conforms: true
+  category: regulatory
+  evidence: 'Paige states 12 CE-IVD marks for its digital-pathology AI algorithms on https://www.paige.ai/ai-technology-and-services'
+- id: ukca
+  conforms: true
+  category: regulatory
+  evidence: 'Paige states 12 UKCA marks alongside its CE-IVD marks on https://www.paige.ai/ai-technology-and-services'
+- id: oauth2
+  conforms: unknown
+  category: api-security
+  evidence: 'No public OpenAPI or auth documentation; docs.paige.ai returns Cloudflare error 1014 (probed 2026-08-04).'
+- id: openapi
+  conforms: unknown
+  category: api-description
+  evidence: >-
+    No OpenAPI/Swagger document found at any Paige host. app.paige.ai answers 200 with
+    an SPA HTML shell for every path including /openapi.json, /swagger.json and /api-docs
+    (probed 2026-08-04) — not a spec.
+- id: rfc9457-problem-details
+  conforms: unknown
+  category: api-errors
+  evidence: No public API error reference.
+- id: rfc9116-security-txt
+  conforms: false
+  category: disclosure
+  evidence: 'https://www.paige.ai/.well-known/security.txt returns HTTP 404 with body {"message":"security.txt not found"} (probed 2026-08-04).'
+x-evidence:
+  fetched: '2026-08-04'
+  url: https://www.paige.ai/ai-technology-and-services
+  http_status: 200

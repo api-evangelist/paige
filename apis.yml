@@ -1,17 +1,38 @@
 aid: paige
 name: Paige
-description: 'Paige is a company surfaced via the API Evangelist harvest backlog (source: secondary-market)
-  and added to the network as a stub for full-pipeline profiling.'
+description: 'Paige (Paige AI, Inc.) is a New York City computational-pathology company
+  founded in 2017 out of Memorial Sloan Kettering, and the first company to receive
+  FDA authorization for a clinical AI application in digital pathology (Paige Prostate,
+  De Novo 2021) alongside the FDA-cleared FullFocus whole-slide-image viewer. Its product
+  line spans the Paige Platform, the Alba pathology copilot, OmniScreen, the AppLab
+  third-party AI marketplace, and the openly published Virchow / Virchow2 / PRISM foundation-model
+  family. Paige markets "UnifAI" — an SDK plus a set of APIs for vendor-neutral integration
+  into laboratory workflows — but that developer surface is sold to laboratory customers
+  rather than published: the developer docs host docs.paige.ai no longer resolves for
+  the public. What Paige does publish openly is its research stack: the Paige-AI GitHub
+  organization (paige-ml-sdk, philips-isyntax-rs, cdh1-cancer-res, omniscreen-eval-results)
+  and the paige-ai Hugging Face organization carrying the Virchow and PRISM model weights.
+  Paige was acquired by Tempus AI in September 2025.'
+image: https://static1.squarespace.com/static/67cf140aa73e796561bb793f/t/67cf195030a3f94d4263b55d/1741625680290/Asset+1.png?format=1500w
 url: https://raw.githubusercontent.com/api-evangelist/paige/refs/heads/main/apis.yml
 x-type: company
 x-source: harvest:secondary-market
-x-tier: stub
-x-tier-reason: harvest
 specificationVersion: '0.20'
 created: '2026-08-04'
 modified: '2026-08-04'
 tags:
 - Company
+- Artificial Intelligence
+- Machine Learning
+- Healthcare
+- Health
+- Digital Pathology
+- Medical Imaging
+- Oncology
+- Diagnostics
+- Life Sciences
+- Foundation Models
+- Medical Devices
 apis: []
 maintainers:
 - FN: Kin Lane
@@ -19,5 +40,68 @@ maintainers:
 - FN: APIs.json
   email: info@apis.io
 common:
+- type: DomainSecurity
+  url: security/paige-domain-security.yml
 - type: Website
+  url: https://www.paige.ai/
+- type: SecondaryMarket
   url: https://forgeglobal.com/paige_stock/
+- type: About
+  url: https://www.paige.ai/about
+- type: Blog
+  url: https://www.paige.ai/blog
+- type: News
+  url: https://www.paige.ai/news
+- type: PressReleases
+  url: https://www.paige.ai/press-releases
+- type: Support
+  url: https://support.paige.ai/
+- type: SignUp
+  url: https://www.paige.ai/request-a-trial
+- type: Login
+  url: https://app.paige.ai/
+- type: TermsOfService
+  url: https://www.paige.ai/terms-conditions
+- type: PrivacyPolicy
+  url: https://www.paige.ai/privacy-policy-1
+- type: GitHubOrganization
+  url: https://github.com/Paige-AI
+- type: Compliance
+  url: https://www.paige.ai/ai-technology-and-services
+- type: Conformance
+  url: conformance/paige-conformance.yml
+- type: Packages
+  url: packages/paige-packages.yml
+- type: SDKs
+  url: packages/paige-packages.yml
+- type: CLI
+  url: cli/paige-cli.yml
+- type: ChangeLog
+  url: changelog/paige-changelog.yml
+- type: LLMsTxt
+  url: llms/paige-llms.txt
+x-enrichment:
+  date: '2026-08-04'
+  status: enriched
+  artifacts_added: 7
+  pass: local-v1
+x-coverage:
+  state: gated
+  reason: customer-only-docs
+  detail: Paige markets "UnifAI" (an SDK plus APIs powering its AppLab marketplace)
+    but ships that surface only to laboratory customers — its developer documentation
+    host docs.paige.ai is CNAMEd to ReadMe.io yet returns Cloudflare error 1014 for
+    every path, api.paige.ai/developer.paige.ai/unifai.paige.ai do not resolve at all,
+    and the only public entry point is a "Request a trial" sales form.
+  evidence:
+  - url: https://docs.paige.ai/
+    status: 403
+  - url: https://docs.paige.ai/openapi.json
+    status: 403
+  - url: https://www.paige.ai/llms.txt
+    status: 404
+  - url: https://www.paige.ai/.well-known/security.txt
+    status: 404
+  - url: https://www.paige.ai/request-a-trial
+    status: 200
+  checked: '2026-08-04'

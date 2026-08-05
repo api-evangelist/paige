@@ -1,0 +1,35 @@
+generated: '2026-08-04'
+method: searched
+source: https://github.com/Paige-AI/paige-ml-sdk/blob/main/CHANGELOG.md
+scope: paige-ml-sdk
+note: >-
+  Paige publishes no product-level or API-level changelog on paige.ai, and the developer
+  docs host docs.paige.ai does not resolve for the public. The only dated/versioned
+  release record Paige publishes is the CHANGELOG.md in the paige-ml-sdk repository.
+  Entries below are transcribed verbatim; the repository publishes no dates and no
+  git tags, so `date` is recorded as null rather than guessed.
+versioning:
+  scheme: semver
+  current: 0.1.1
+  source: https://raw.githubusercontent.com/Paige-AI/paige-ml-sdk/main/CHANGELOG.md
+  tags_published: false
+entries:
+- version: 0.1.1
+  date: null
+  breaking: []
+  additions:
+  - 'feat: add notebook example for using Virchow2G or Virchow2G Mini in Azure ML Studio.'
+  highlights: Azure ML Studio example for the restricted-weight Virchow2G models.
+- version: 0.1.0
+  date: null
+  breaking: []
+  additions:
+  - 'feat: initial commit.'
+  highlights: Initial public release of the Paige ML SDK (alpha).
+repository_activity:
+  last_push: '2025-05-12T19:46:21Z'
+  source: https://api.github.com/repos/Paige-AI/paige-ml-sdk
+x-evidence:
+  fetched: '2026-08-04'
+  url: https://raw.githubusercontent.com/Paige-AI/paige-ml-sdk/main/CHANGELOG.md
+  http_status: 200

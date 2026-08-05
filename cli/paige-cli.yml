@@ -1,0 +1,46 @@
+generated: '2026-08-04'
+method: searched
+source: https://github.com/Paige-AI/paige-ml-sdk
+name: paige.ml_sdk
+invocation: python -m paige.ml_sdk
+description: >-
+  First-party command line interface shipped inside the Paige ML SDK for training
+  and running inference with supervised computational-pathology models over tile-level
+  embeddings (e.g. embeddings produced by the Virchow / Virchow2 foundation models).
+  Built on the PyTorch Lightning CLI, so the full Lightning Trainer flag surface is
+  exposed. There is no CLI for the commercial Paige Platform / UnifAI API.
+package: packages/paige-packages.yml#paige-ml-sdk
+install:
+- method: source
+  command: git clone https://github.com/Paige-AI/paige-ml-sdk && cd paige-ml-sdk && pip install -e .
+help: python -m paige.ml_sdk --help
+commands:
+- name: fit
+  description: Train a model against a dataset of tile-level embeddings.
+  help: python -m paige.ml_sdk fit --help
+flag_groups:
+- name: trainer
+  prefix: --trainer.
+  description: >-
+    PyTorch Lightning Trainer configuration — strategy (DDP/FSDP), accelerator, precision,
+    epochs. Example documented in the README: --trainer.precision 16.
+- name: logger
+  prefix: --trainer.logger
+  description: >-
+    Logger selection. Defaults to Lightning's CSVLogger writing to ./lightning_logs;
+    any Lightning built-in logger (WandB, TensorBoard) may be substituted.
+- name: optimizer
+  prefix: --optimizer
+  description: Any torch.optim algorithm.
+- name: lr_scheduler
+  prefix: --lr_scheduler
+  description: Learning-rate schedule selection.
+- name: callbacks
+  prefix: --trainer.callbacks
+  description: >-
+    Lightning callbacks. By default only a model-checkpoint callback is applied.
+examples: https://github.com/Paige-AI/paige-ml-sdk/tree/main/examples
+x-evidence:
+  fetched: '2026-08-04'
+  url: https://raw.githubusercontent.com/Paige-AI/paige-ml-sdk/main/README.md
+  http_status: 200
