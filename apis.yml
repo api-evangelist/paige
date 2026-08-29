@@ -13,6 +13,17 @@ description: 'Paige (Paige AI, Inc.) is a New York City computational-pathology 
   organization (paige-ml-sdk, philips-isyntax-rs, cdh1-cancer-res, omniscreen-eval-results)
   and the paige-ai Hugging Face organization carrying the Virchow and PRISM model weights.
   Paige was acquired by Tempus AI in September 2025.'
+deliveryModel:
+  model: saas
+  open_source: false
+  commercial: true
+  callable_host: false
+  label: Hosted service · you call their endpoint
+  confidence: medium
+  source:
+  - pricing
+  generated: '2026-08-28'
+  method: derived
 image: https://static1.squarespace.com/static/67cf140aa73e796561bb793f/t/67cf195030a3f94d4263b55d/1741625680290/Asset+1.png?format=1500w
 url: https://raw.githubusercontent.com/api-evangelist/paige/refs/heads/main/apis.yml
 x-type: company
