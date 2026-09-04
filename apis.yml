@@ -24,6 +24,18 @@ deliveryModel:
   - pricing
   generated: '2026-08-28'
   method: derived
+accessModel:
+  pricing: unknown
+  onboarding: unknown
+  trial: false
+  try_now: false
+  public: false
+  label: Unknown
+  confidence: low
+  source:
+  - security
+  generated: '2026-09-02'
+  method: derived
 image: https://static1.squarespace.com/static/67cf140aa73e796561bb793f/t/67cf195030a3f94d4263b55d/1741625680290/Asset+1.png?format=1500w
 url: https://raw.githubusercontent.com/api-evangelist/paige/refs/heads/main/apis.yml
 x-type: company
