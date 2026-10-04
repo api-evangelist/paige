@@ -46,7 +46,7 @@ modified: '2026-08-04'
 tags:
 - Company
 - Artificial Intelligence
-- Machine-Learning
+- Machine Learning
 - Healthcare
 - Health
 - Digital Pathology
@@ -69,6 +69,7 @@ tags_raw:
 - Life Sciences
 - Foundation Models
 - Medical Devices
+- Machine-Learning
 apis: []
 maintainers:
 - FN: Kin Lane
